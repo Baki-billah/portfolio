@@ -1,745 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5GSVZ7NLTP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-81E380X2BL');
-</script>
-	
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baki Billah</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/favicon.png" rel="apple-touch-icon">
+  <link rel="icon" href="https://i.ibb.co.com/YTfgC3kF/Chat-GPT-Image-Apr-29-2026-12-41-47-PM.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+      
+      
+      
+      section h2 { text-align:center; }
+      
+      
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:#020617;color:#fff}
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 40px;background:rgba(2,6,23,0.75);backdrop-filter:blur(12px)
+    }
 
+    nav a{color:#fff;margin-left:15px;text-decoration:none;transition:.3s;font-size:14px}
+    nav a:hover{color:#22c55e}
+
+    section{padding:90px 40px}
+
+    /* HERO FUNNEL */
+    .hero{
+      height:100vh;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+      
+    }
+      .hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  filter:blur(100px);
+  z-index:0;
+}
+      
+
+.hero::before{
+  background:#22c55e;
+  top:-50px;
+  left:-80px;
+  opacity:0.4;
+}
+
+.hero::after{
+  background:#0ea5e9;
+  bottom:-80px;
+  right:-80px;
+  opacity:0.3;
+}
+
+.hero *{
+  position:relative;
+  z-index:1;
+}
+
+    .hero img{
+      width:150px;border-radius:50%;border:4px solid #22c55e;
+      animation:float 4s ease-in-out infinite
+    }
+
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+    .hero h1{font-size:40px;margin-top:15px}
+    .typing{color:#22c55e;font-weight:600}
+
+    .cta-group{margin-top:20px;display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
+
+    .btn{
+      padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:600;
+      transition:.3s
+    }
+
+    .btn-primary{background:#22c55e;color:#000}
+    .btn-outline{border:1px solid #22c55e;color:#22c55e}
+
+    /* FUNNEL SECTION */
+    .funnel-box{
+      max-width:800px;margin:auto;text-align:center
+    }
+
+    /* STATS */
+    .stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;text-align:center}
+    .stat h3{color:#22c55e;font-size:36px}
+
+    /* SKILLS */
+    .skill-box{max-width:700px;margin:auto}
+    .skill{margin-bottom:15px}
+    .bar{background:#1e293b;border-radius:20px;overflow:hidden}
+    .fill{height:10px;width:0;background:#22c55e;transition:2s}
+
+    /* SERVICES / FUNNEL OFFER */
+    .services{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px
+    }
+
+    .service{
+      background:#0f172a;padding:20px;border-radius:15px;text-align:center
+    }
+
+    .service h3{color:#22c55e;margin-bottom:10px}
+
+    /* PORTFOLIO */
+    .category{margin-top:40px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+    .card{position:relative;border-radius:15px;overflow:hidden;cursor:pointer;background:#0f172a}
+    .card img{width:100%;height:200px;object-fit:cover}
+
+    .overlay{
+      position:absolute;inset:0;background:rgba(0,0,0,0.6);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;transition:.3s
+    }
+
+    .card:hover .overlay{opacity:1}
+
+    /* TESTIMONIAL */
+    .testimonial{
+      max-width:700px;margin:auto;text-align:center;background:#0f172a;
+      padding:25px;border-radius:15px
+    }
+
+    /* CONTACT */
+    .contact-form{max-width:600px;margin:auto}
+    input,textarea{width:100%;padding:12px;margin:10px 0;border:none;border-radius:8px}
+
+    button{
+      width:100%;padding:12px;background:#22c55e;border:none;border-radius:8px;font-weight:600
+    }
+
+    /* WHATSAPP */
+    .whatsapp{
+      position:fixed;bottom:20px;right:20px;
+      background:#25D366;color:#fff;padding:15px;border-radius:50%
+    }
+
+    footer{text-align:center;padding:25px;background:#000}
+  </style>
+    
+    <div id="topBtn">↑</div>
+    
+    <style>
+.hero-3d{
+  height:100vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 8%;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  overflow:hidden;
+  position:relative;
+}
+
+/* LEFT CONTENT */
+.hero-content{
+  z-index:2;
+  max-width:500px;
+}
+
+.hero-content h1{
+  font-size:60px;
+  background:linear-gradient(90deg,#fff,#22c55e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* 3D CARD */
+.hero-card{
+  width:320px;
+  height:420px;
+  border-radius:25px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:0.2s;
+  z-index:2;
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:25px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* glowing layer */
+.glow{
+  position:absolute;
+  inset:-20px;
+  background:radial-gradient(circle,#22c55e55,transparent 70%);
+  filter:blur(20px);
+  z-index:-1;
+}
+
+/* floating animation */
+@keyframes float3d{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-15px)}
+}
+
+.hero-card{
+  animation:float3d 5s ease-in-out infinite;
+}
+
+/* mobile */
+@media(max-width:900px){
+  .hero-3d{
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+  }
+
+  .hero-card{
+    margin-top:30px;
+  }
+}
+</style>
+
+<style>
+#topBtn{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:#22c55e;
+  color:#000;
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  cursor:pointer;
+  font-weight:bold;
+  display:none;
+  z-index:9999;
+}
+</style>
+
+    <script>
+const card = document.querySelector(".hero-card");
+
+document.addEventListener("mousemove",(e)=>{
+  let x = (window.innerWidth / 2 - e.pageX) / 25;
+  let y = (window.innerHeight / 2 - e.pageY) / 25;
+
+  card.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+});
+</script>
+    
+<script>
+const btn=document.getElementById("topBtn");
+
+window.onscroll=()=>{
+  btn.style.display = window.scrollY > 300 ? "flex" : "none";
+};
+
+btn.onclick=()=>{
+  window.scrollTo({top:0,behavior:"smooth"});
+};
+</script>
+    
 </head>
 
 <body>
+    
+    <div class="wa-popup" id="waPopup">
+  <p>👋 Need help with your project?</p>
+  <a href="https://wa.me/8801518395372" target="_blank">Chat on WhatsApp</a>
+  <span onclick="closeWA()">✖</span>
+</div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+<style>
+.wa-popup{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  background:#0f172a;
+  border:1px solid #22c55e;
+  padding:15px;
+  border-radius:12px;
+  color:#fff;
+  width:220px;
+  display:none;
+  z-index:9999;
+}
 
-      <h1 class="logo"><a href="index.html">Baki</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+.wa-popup a{
+  display:block;
+  margin-top:10px;
+  background:#22c55e;
+  color:#000;
+  padding:8px;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+}
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="https://drive.google.com/file/d/1Lv0tmRap-fjkGQwpD9b7Wf6gjnEqYq9a/view?usp=sharing" target="_blank">Resume</a></li>
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
-         <!-- <li class="dropdown"><a href="#"><span>Coming Soon</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Coming </a></li>
-              <li class="dropdown"><a href="#"><span>Coming Soon</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                 <li><a href="#"> Soon</a></li>
-                 
-                </ul>
-              </li>
-              <li><a href="#">Soon1</a></li>
-             
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+.wa-popup span{
+  position:absolute;
+  top:5px;
+  right:10px;
+  cursor:pointer;
+}
+</style>
 
+<script>
+setTimeout(()=>{
+  document.getElementById("waPopup").style.display="block";
+},5000);
+
+function closeWA(){
+  document.getElementById("waPopup").style.display="none";
+}
+</script>
+
+<header>
+  <h2>Baki Billah</h2>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Clients</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO FUNNEL -->
+<section class="hero-3d-center">
+
+  <!-- IMAGE CENTER -->
+  <div class="hero-card">
+    <img src="https://i.ibb.co.com/fd8W8FFz/Whats-App-Image-2026-04-29-at-12-23-22-PM.png" />
+    <div class="glow"></div>
+  </div>
+
+  <!-- TEXT BELOW -->
+  <div class="hero-content">
+    <h1>Baki Billah</h1>
+    <p>I am a <span class="typing"></span></p>
+
+    <div class="cta-group">
+      <a class="btn btn-primary" href="#contact">Hire Me Now</a>
+      <a class="btn btn-outline" href="#">Download CV</a>
     </div>
-  </header><!-- End Header -->
+  </div>
 
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/test.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am Baki Billah</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Freelancer,Virtual Assistant, Medical Assistant, Martial Artist"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-        </div>
-      </div>
+</section>
+    <style>
+.hero-3d-center{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  overflow:hidden;
+  padding:60px 20px;
+}
+
+/* 3D IMAGE */
+.hero-card{
+  width:340px;
+  height:440px;
+  position:relative;
+  transform-style:preserve-3d;
+  animation:float3d 6s ease-in-out infinite;
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:25px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.6);
+}
+
+/* glow */
+.glow{
+  position:absolute;
+  inset:-30px;
+  background:radial-gradient(circle,#22c55e55,transparent 70%);
+  filter:blur(25px);
+  z-index:-1;
+}
+
+/* TEXT */
+.hero-content{
+  margin-top:30px;
+  max-width:600px;
+}
+
+.hero-content h1{
+  font-size:60px;
+  background:linear-gradient(90deg,#fff,#22c55e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-content p{
+  margin-top:10px;
+  font-size:18px;
+  opacity:0.8;
+}
+
+/* BUTTONS */
+.cta-group{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float3d{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-card{
+    width:280px;
+    height:360px;
+  }
+
+  .hero-content h1{
+    font-size:40px;
+  }
+}
+</style>
+    
+    <script>
+new Typed('.typing',{
+  strings:['Digital Marketer','SEO Expert','Web Developer','Graphic Designer'],
+  typeSpeed:60,
+  backSpeed:40,
+  loop:true
+});
+</script>
+
+<!-- SERVICES FUNNEL -->
+<section id="services">
+  <h2>What I Offer</h2>
+  <div class="services">
+    <div class="service"><h3>SEO Growth</h3><p>Rank your business on Google</p></div>
+    <div class="service"><h3>Ads Management</h3><p>Facebook & Google Ads that convert</p></div>
+    <div class="service"><h3>Design</h3><p>High converting graphics & branding</p></div>
+    <div class="service"><h3>Web Development</h3><p>Fast, modern business websites</p></div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section>
+  <h2>Results</h2>
+  <div class="stats">
+    <div class="stat"><h3 class="count" data="7000">0</h3><p>Projects</p></div>
+    <div class="stat"><h3 class="count" data="100">0</h3><p>Clients</p></div>
+    <div class="stat"><h3 class="count" data="8">0</h3><p>Years</p></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2>Skills</h2>
+  <div class="skill-box">
+    <div class="skill"><p>SEO</p><div class="bar"><div class="fill" data="95%"></div></div></div>
+    <div class="skill"><p>Marketing</p><div class="bar"><div class="fill" data="98%"></div></div></div>
+    <div class="skill"><p>Design</p><div class="bar"><div class="fill" data="97%"></div></div></div>
+    <div class="skill"><p>Web Dev</p><div class="bar"><div class="fill" data="92%"></div></div></div>
+  </div>
+</section>
+
+<!-- CLIENT RESULTS -->
+<!-- CLIENT RESULTS SLIDER -->
+<!-- CLIENT RESULTS PREMIUM SLIDER -->
+<section id="testimonials">
+  <h2>Client Results</h2>
+
+  <div class="premium-slider" id="resultSlider">
+    <div class="premium-slide active">
+      <div class="card-result">🚀 <b>+300% Leads Growth</b><p>E-commerce Campaign Optimization</p></div>
     </div>
-  </div><!-- End Hero Section -->
+    <div class="premium-slide">
+      <div class="card-result">📈 <b>+250% Engagement</b><p>Social Media Strategy Scaling</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">🏆 <b>#1 Google Ranking</b><p>Local SEO Domination</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">💰 <b>4x ROI Ads</b><p>Facebook Ads Conversion System</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">🎯 <b>High Conversion Pages</b><p>Landing Page Optimization</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">🎨 <b>Brand Growth</b><p>Identity & Visual Strategy</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">📊 <b>7000+ Projects</b><p>Delivered Successfully</p></div>
+    </div>
+    <div class="premium-slide">
+      <div class="card-result">🤝 <b>100+ Clients</b><p>Global Satisfaction</p></div>
+    </div>
+  </div>
 
-  <main id="main">
+  <style>
+    .premium-slider{
+      max-width:850px;
+      margin:auto;
+      position:relative;
+      min-height:140px;
+    }
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/bakipp.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Baki Billah</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Professional Freelancer</span></p>
-                        <p><span class="title-s">Email: </span> <span>bakibillah1475@gmail.com</span></p>
-                        <p><span class="title-s">Phone: </span> <span>+8801518395372</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>Virtual Assistance</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Lead Generation</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Web Designing</span> <span class="pull-right">70%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Graphics Desinging</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                      <span>Digital Marketing</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        About me
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      Hello, I am Baki Billah. After completing My Medical Assistant degree I have started a business. And beside that  I am a professional Freelancer.
-                    </p>
-                    <p class="lead">
-                      I am an enthusiastic, self-motivated, reliable, responsible and hard working person. I am a mature team worker and adaptable to all challenging situations. I am able to work well both in a team environment as well as using own initiative. I am able to work well under pressure and adhere to strict deadlines.
-                    </p>
-                    <p class="lead">
-                      I am a flexible and experienced insurance administrator with excellent time management skills.I am always enthusiastic to learn and undertake new challenges. I am always willing to learn new skills.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End About Section -->
+    .premium-slide{
+      display:none;
+      text-align:center;
+      animation:fadeScale .6s ease;
+    }
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Services
-              </h3>
-              <p class="subtitle-a">
-                The greatest of wealth is the richness of the soul. - Prophet Muhammad (SM)
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Virtual Assistance</h2>
-                <p class="s-description text-center">
-                  A virtual assistant is a self-employed worker who specializes in offering administrative services to clients from a remote location, usually a home office. Typical tasks a virtual assistant might perform include scheduling appointments, making phone calls, making travel arrangements, and managing email accounts.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Web Designing</h2>
-                <p class="s-description text-center">
-                  Web designers plan, create and code internet sites and web pages, many of which combine text with sounds, pictures, graphics and video clips. A web designer is responsible for creating the design and layout of a website or web pages. It and can mean working on a brand new website or updating an already existing site.
+    .premium-slide.active{display:block}
 
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Digital Marketing</h2>
-                <p class="s-description text-center">
-                  Digital marketing is the promotion of brands to connect with potential customers using the internet and other forms of digital communication. This includes not only email, social media, and web-based advertising, but also text and multimedia messages as a marketing channel.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Lead Generation</h2>
-                <p class="s-description text-center">
-                  What is lead generation? Lead generation is the process of generating consumer interest for a product or service with the goal of turning that interest into a sale. In online marketing this typically involves collecting a visitor's contact information (called a “lead”) via a web form.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-brightness-high"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Graphic Design</h2>
-                <p class="s-description text-center">
-                  Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users' specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-calendar4-week"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Marketing Services</h2>
-                <p class="s-description text-center">
-                  Services marketing is a form of marketing businesses that provide a service to their customers use to increase brand awareness and sales. Unlike product marketing, services marketing focuses on advertising intangible transactions that provide value to customers.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Services Section -->
+    .card-result{
+      background:linear-gradient(135deg,#0f172a,#111827);
+      padding:25px;
+      border-radius:18px;
+      border:1px solid rgba(34,197,94,0.3);
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      transform:scale(1);
+    }
 
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container position-relative">
-        <div class="row">
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-check"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">WORKS COMPLETED</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">YEARS OF EXPERIENCE</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-people"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">TOTAL CLIENTS</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-award"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">AWARD WON</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Counter Section -->
+    .card-result b{
+      color:#22c55e;
+      font-size:20px;
+    }
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Portfolio
-              </h3>
-              <p class="subtitle-a">
-                Jealousy is one of the evil habits that anyone may possess. Always be grateful to Allah to what has been provided to you as Almighty Lord is the Best Provider for His Creations regardless of any biasness. - Prophet Muhammad (SM)
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-4.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Comig Soon</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2017</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    .card-result p{
+      opacity:0.8;
+      margin-top:8px;
+    }
 
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
+    @keyframes fadeScale{
+      from{opacity:0;transform:scale(0.95)}
+      to{opacity:1;transform:scale(1)}
+    }
+  </style>
 
-    <!-- ======= Testimonials Section ======= -->
-    <div class="testimonials paralax-mf bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
+    <script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
 
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-              <div class="swiper-wrapper">
+document.querySelectorAll("section, .service, .card, .stat").forEach(el=>{
+  el.style.opacity = 0;
+  el.style.transform = "translateY(40px)";
+  el.style.transition = "0.8s ease";
+  observer.observe(el);
+});
+</script>
+    
+  <script>
+    let i=0;
+    const slides=document.querySelectorAll('#resultSlider .premium-slide');
 
-                <div class="swiper-slide">
-                  <div class="testimonial-box">
-                    <div class="author-test">
-                      <img src="assets/img/baki.jpg" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Baki Billah</span>
-                    </div>
-                    <div class="content-test">
-                      <p class="description lead">
-                      “The greatest jihad (struggle/striving) is to battle your own soul, to fight the evil within yourself.” Prophet Muhammad
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End testimonial item -->
+    function show(){
+      slides.forEach(s=>s.classList.remove('active'));
+      slides[i].classList.add('active');
+      i=(i+1)%slides.length;
+    }
 
-                <!-- <div class="swiper-slide">
-                  <div class="testimonial-box">
-                    <div class="author-test">
-                      <img src="assets/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Marta Socrate</span>
-                    </div>
-                    <div class="content-test">
-                      <p class="description lead">
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div> --> <!-- End testimonial item -->
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+    setInterval(show,3000);
+  </script>
+</section>
 
-            <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-          
-        </div> -->
-          </div>
-        </div>
-      </div>
-    </div><!-- End Testimonials Section -->
+<!-- PORTFOLIO -->
+<!-- PORTFOLIO -->
+<!-- PORTFOLIO WITH LIGHTBOX -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <p style="text-align:center;opacity:.7">Full categorized work showcase</p>
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Blog
-              </h3>
-              <p class="subtitle-a">
-               A blog (a truncation of "weblog") is a discussion or informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts).
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Travel</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                <p class="card-description">
-                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                  a pellentesque nec,
-                  egestas non nisi.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Baki Billah</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/post-2.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Web Design</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                <p class="card-description">
-                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                  a pellentesque nec,
-                  egestas non nisi.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Baki Billah</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/post-3.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Web Design</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                <p class="card-description">
-                  Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                  a pellentesque nec,
-                  egestas non nisi.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Baki Billah</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span> 10 min
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Blog Section -->
+  <div class="category">
+    <h3>Book Cover Design</h3>
+    <div class="grid">
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/Z1gFYh7V/Mock-up-2.jpg"><div class="overlay">Book Cover Design</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/Y7S4Lf2f/Last-Dance-Warrior-Time-Trave-Mockup.jpg"><div class="overlay">Fantasy Book Cover</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/bRrs0mPY/10-in-One.jpg"><div class="overlay">Multi Design Pack</div></div>
+    </div>
+  </div>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Send Message Us
-                      </h5>
-                    </div>
-                    <div>
-   
+  <div class="category">
+    <h3>Flyer Design</h3>
+    <div class="grid">
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/k63jxNvx/May-2025-Academy-Tryouts.png"><div class="overlay">Academy Flyer</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/GQB5qhfY/Screenshot-2026-04-29-114920.png"><div class="overlay">Marketing Flyer</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/SXDCqhCg/Red-and-Black-Vintage-Grunge-Schedule-Soccer-Match-Instagram-Post.png"><div class="overlay">Sports Flyer</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/JMWV0KJ/Copy-of-May-2025-Academy-Tryouts.png"><div class="overlay">Training Flyer</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/0j9w9JJg/Untitled-design-11.png"><div class="overlay">Creative Flyer</div></div>
+    </div>
+  </div>
 
-       <div class="row">
-                       <div class="button button-a button-big button-rouded">
-							  <li><a href="mailTo:bakibillah1475@gmail.com" target="_blank"><span class="button button-a button-big button-rouded">Send Message</span></a></li>
-						
-                      </div>
-                        </div>
-                     
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Get in Touch
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                       O you who believe! Eat not up your property among yourselves unjustly except it be a trade amongst you, by mutual consent. And do not kill yourselves (nor kill one another). Surely, Allah is Most Merciful to you.
+  <div class="category">
+    <h3>Newsletter Design</h3>
+    <div class="grid">
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/zWLZZGN1/Screenshot-2026-04-29-114932.png"><div class="overlay">Email Design</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/60ZdDDJ0/7-Nov-Texas-Premier-Soccer-Club-Newsletter-1.jpg"><div class="overlay">Newsletter 1</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/9mbBNyfL/7-Nov-Texas-Premier-Soccer-Club-Newsletter.jpg"><div class="overlay">Newsletter 2</div></div>
+    </div>
+  </div>
 
-                        Quran 4:29
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> 139/2/1 Khagohar Ghunti St, Mymensingh 2200</li>
-                        <li><span class="bi bi-phone"></span>+8801777079470</li>
-                        <li><span class="bi bi-envelope"></span> bakibillah1475@gmail.com</li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href="https://www.facebook.com/bakibillah1475" target="_blank"><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/baki_billah1475/" target="_blank"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                        <li><a href="#"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
-                        <li><a href="https://www.linkedin.com/in/baki-billah-a884401a8/" target="_blank"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
+  <div class="category">
+    <h3>Photo Manipulation</h3>
+    <div class="grid">
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/PXSFMpW/Whats-App-Image-2026-04-29-at-1-18-00-PM.jpg"><div class="overlay">Creative Edit</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/NdYh82vn/Whats-App-Image-2026-04-29-at-1-17-59-PM.jpg"><div class="overlay">Manipulation</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/pDLYZf4/Screenshot-2026-04-29-132059.png"><div class="overlay">Advanced Edit</div></div>
+    </div>
+  </div>
 
-  </main><!-- End #main -->
+  <div class="category">
+    <h3>Website Projects</h3>
+    <div class="grid">
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/JjjttsZT/Screenshot-2026-04-29-114348.png"><div class="overlay">Website</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/KcfqZnWR/Screenshot-2026-04-29-114455.png"><div class="overlay">Business Site</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/S48yfRWT/Screenshot-2026-04-29-114556.png"><div class="overlay">Club Site</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/qF4yScXb/Screenshot-2026-04-29-114612.png"><div class="overlay">Corporate Site</div></div>
+      <div class="card" onclick="openLightbox(this)"><img src="https://i.ibb.co.com/1tx2yBwZ/Screenshot-2026-04-29-114641.png"><div class="overlay">Agency Site</div></div>
+    </div>
+  </div>
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>Baki Billah</strong>. All Rights Reserved</p>
-            <div class="credits">
-          
-              Designed by <a href="https://bakibillah.com/">Baki Billah</a>
-            </div>
-          </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:9999">
+  <img id="lightboxImg" style="max-width:90%;max-height:90%">
+</div>
+
+<script>
+function openLightbox(el){
+  document.getElementById('lightboxImg').src = el.querySelector('img').src;
+  document.getElementById('lightbox').style.display='flex';
+}
+
+document.getElementById('lightbox').onclick=function(){
+  this.style.display='none';
+}
+</script>
+    
+
+    
+    <!-- FAQ SECTION -->
+<section id="faq" style="padding:80px 40px;background:">
+  <h2>FAQ</h2>
+
+  <div style="max-width:800px;margin:auto">
+
+    <div class="faq-item">
+      <div class="faq-question">What services do you provide?</div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          I provide SEO, digital marketing, web development, and graphic design services.
         </div>
       </div>
     </div>
-  </footer><!-- End  Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div class="faq-item">
+      <div class="faq-question">How long does a project take?</div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Most projects take 2–7 days depending on complexity.
+        </div>
+      </div>
+    </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <div class="faq-item">
+      <div class="faq-question">Do you work internationally?</div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Yes, I work with clients worldwide.
+        </div>
+      </div>
+    </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <div class="faq-item">
+      <div class="faq-question">How can I contact you?</div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          You can use the contact form or WhatsApp button on the website.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-item{
+    background:#020617;
+    margin:10px 0;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(34,197,94,0.15);
+  }
+
+  .faq-question{
+    padding:16px;
+    cursor:pointer;
+    font-weight:600;
+    position:relative;
+    transition:0.3s;
+  }
+
+  .faq-question:hover{
+    color:#22c55e;
+  }
+
+  .faq-question::after{
+    content:"+";
+    position:absolute;
+    right:16px;
+    color:#22c55e;
+    font-size:18px;
+    transition:0.3s;
+  }
+
+  .faq-item.active .faq-question::after{
+    transform:rotate(45deg);
+  }
+
+  /* Smooth Apple-style animation */
+  .faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows 0.35s ease;
+  }
+
+  .faq-answer-inner{
+    overflow:hidden;
+    padding:0 16px;
+    color:#cbd5e1;
+    opacity:0;
+    transform:translateY(-6px);
+    transition:0.3s ease;
+  }
+
+  .faq-item.active .faq-answer{
+    grid-template-rows:1fr;
+  }
+
+  .faq-item.active .faq-answer-inner{
+    padding-bottom:16px;
+    opacity:1;
+    transform:translateY(0);
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".faq-question").forEach(q=>{
+    q.addEventListener("click",()=>{
+      const item = q.parentElement;
+      item.classList.toggle("active");
+    });
+  });
+</script>
+    
+    <!-- WHY CHOOSE ME -->
+<section style="padding:80px 40px;background:">
+  <h2>Why Choose Me</h2>
+
+  <div style="max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+
+    <div style="background:#0f172a;padding:20px;border-radius:15px">
+      <h3 style="color:#22c55e">🔥 Fast Delivery</h3>
+      <p>I complete projects quickly without losing quality.</p>
+    </div>
+
+    <div style="background:#0f172a;padding:20px;border-radius:15px">
+      <h3 style="color:#22c55e">🎯 Result Focused</h3>
+      <p>I focus on real growth, leads, and conversions.</p>
+    </div>
+
+    <div style="background:#0f172a;padding:20px;border-radius:15px">
+      <h3 style="color:#22c55e">🤝 100+ Clients</h3>
+      <p>Trusted by clients worldwide across industries.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT FUNNEL -->
+<section id="contact">
+  <h2>Let’s Work Together</h2>
+
+  <div class="contact-form">
+    <form action="https://formsubmit.co/bakibillah1475@gmail.com" method="POST">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Tell me about your project"></textarea>
+      <button>Send & Get Quote</button>
+    </form>
+  </div>
+
+  <p style="text-align:center;margin-top:15px">Or WhatsApp me instantly</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/8801518395372">💬</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+new Typed('.typing',{
+  strings:['Digital Marketer','SEO Expert','Web Developer','Graphic Designer'],
+  typeSpeed:60,backSpeed:40,loop:true
+});
+
+// counter
+const counters=document.querySelectorAll('.count');
+counters.forEach(c=>{
+  const update=()=>{
+    let target=+c.getAttribute('data');
+    let val=+c.innerText;
+    let inc=target/100;
+    if(val<target){c.innerText=Math.ceil(val+inc);setTimeout(update,20)}
+    else c.innerText=target;
+  };
+  update();
+});
+
+// skill
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.fill').forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight)
+      f.style.width=f.getAttribute('data');
+  });
+});
+</script>
+
+    
+<!-- SOCIAL MEDIA ICONS -->
+<section id="social" style="text-align:center;padding:30px 20px;background:#0b1220">
+  <h2 style="margin-bottom:15px">Connect With Me</h2>
+  <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
+    <a href="https://www.facebook.com/bakibillah1475" target="_blank" style="color:#fff;font-size:28px">
+      <svg width="30" height="30" fill="#22c55e" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.87v-6.99H8.1V12h2.4V9.8c0-2.38 1.42-3.7 3.6-3.7 1.05 0 2.15.19 2.15.19v2.36h-1.21c-1.19 0-1.56.74-1.56 1.5V12h2.66l-.43 2.88h-2.23v6.99A10 10 0 0 0 22 12"/></svg>
+    </a>
+
+    <a href="https://www.instagram.com/md_baki_billah" target="_blank" style="color:#fff;font-size:28px">
+      <svg width="30" height="30" fill="#22c55e" viewBox="0 0 24 24"><path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zM18 6.8a1.2 1.2 0 1 0 1.2 1.2A1.2 1.2 0 0 0 18 6.8z"/></svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/baki-billah-a884401a8/" target="_blank" style="color:#fff;font-size:28px">
+      <svg width="30" height="30" fill="#22c55e" viewBox="0 0 24 24"><path d="M4 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4zm4.5 6.5A1.5 1.5 0 1 1 7 8a1.5 1.5 0 0 1 1.5 1.5zM6 10h3v8H6v-8zm5 0h3v1.2c.5-.9 1.7-1.7 3.5-1.7 3 0 3.5 2 3.5 4.5V18h-3v-4c0-1-.3-2-1.5-2s-2 1-2 2v4h-3v-8z"/></svg>
+    </a>
+  </div>
+</section>
+    <footer>
+  <p>© 2026 Baki Billah | Think Different.</p>
+</footer>
 
 </body>
-
 </html>
