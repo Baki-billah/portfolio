@@ -953,13 +953,39 @@ Thanks for reaching out. I’ll respond within 24 hours.
 
 </form>
 </div>
+
+<a class="whatsapp" href="https://wa.me/8801518395372">💬</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-document.querySelectorAll(".form-group input, .form-group textarea, .form-group select")
-.forEach(el=>{
-  el.addEventListener("focus",()=>el.parentElement.classList.add("active"));
-  el.addEventListener("blur",()=>el.parentElement.classList.remove("active"));
+new Typed('.typing',{
+  strings:['Digital Marketer','SEO Expert','Web Developer','Graphic Designer'],
+  typeSpeed:60,backSpeed:40,loop:true
+});
+
+// counter
+const counters=document.querySelectorAll('.count');
+counters.forEach(c=>{
+  const update=()=>{
+    let target=+c.getAttribute('data');
+    let val=+c.innerText;
+    let inc=target/100;
+    if(val<target){c.innerText=Math.ceil(val+inc);setTimeout(update,20)}
+    else c.innerText=target;
+  };
+  update();
+});
+
+// skill
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.fill').forEach(f=>{
+    if(f.getBoundingClientRect().top<window.innerHeight)
+      f.style.width=f.getAttribute('data');
+  });
 });
 </script>
+
     
 <!-- SOCIAL MEDIA ICONS -->
 <section id="social" style="text-align:center;padding:30px 20px;background:">
