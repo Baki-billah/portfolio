@@ -141,6 +141,105 @@
     button{
       width:100%;padding:12px;background:#22c55e;border:none;border-radius:8px;font-weight:600
     }
+      
+      /* GLASS CONTAINER */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(34,197,94,0.15);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* FORM GROUP */
+.form-group {
+  position: relative;
+  margin: 18px 0;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 16px 12px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: rgba(2,6,23,0.8);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+/* SELECT CUSTOM */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%2322c55e' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 5 5-5H5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+/* LABEL */
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 16px;
+  color: #94a3b8;
+  font-size: 14px;
+  transition: 0.25s;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* FLOAT */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label,
+.form-group select:focus + label,
+.form-group select:valid + label {
+  top: -8px;
+  font-size: 11px;
+  color: #22c55e;
+}
+
+/* GLOW FOCUS EFFECT */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #22c55e;
+  box-shadow:
+    0 0 0 1px #22c55e,
+    0 0 15px rgba(34,197,94,0.3);
+}
+
+/* BUTTON GLOW */
+.btn-glow {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg,#22c55e,#16a34a);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34,197,94,0.4);
+}
+
+/* CLICK EFFECT */
+.btn-glow:active {
+  transform: scale(0.97);
+}
 
     /* WHATSAPP */
     .whatsapp{
@@ -342,7 +441,7 @@ function closeWA(){
 
   <!-- IMAGE CENTER -->
   <div class="hero-card">
-    <img src="https://i.ibb.co.com/nNY62Jr8/baki.webp" />
+    <img src="https://i.ibb.co.com/fd8W8FFz/Whats-App-Image-2026-04-29-at-12-23-22-PM.png" />
     <div class="glow"></div>
   </div>
 
@@ -353,7 +452,7 @@ function closeWA(){
 
     <div class="cta-group">
       <a class="btn btn-primary" href="#contact">Hire Me Now</a>
-      <a class="btn btn-outline" href="https://drive.google.com/file/d/1Lv0tmRap-fjkGQwpD9b7Wf6gjnEqYq9a/view?usp=drive_link">Download CV</a>
+      <a class="btn btn-outline" href="#">Download CV</a>
     </div>
   </div>
 
@@ -807,56 +906,63 @@ document.getElementById('lightbox').onclick=function(){
 </section>
 
 <!-- CONTACT FUNNEL -->
-<section id="contact">
-  <h2>Let’s Work Together</h2>
+<div class="contact-form glass">
 
-  <div class="contact-form">
-    <form action="https://formsubmit.co/bakibillah1475@gmail.com" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Tell me about your project"></textarea>
-      <button>Send & Get Quote</button>
-    </form>
+<form action="https://formsubmit.co/bakibillah1475@gmail.com" method="POST">
+
+  <!-- SETTINGS -->
+  <input type="hidden" name="_subject" value="🔥 New Client Inquiry - Baki Billah">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- AUTO REPLY -->
+  <input type="hidden" name="_autoresponse" value="Hi,
+
+Thanks for reaching out. I’ll respond within 24 hours.
+
+- Baki Billah">
+
+  <!-- INPUTS -->
+  <div class="form-group">
+    <input type="text" name="name" required placeholder=" ">
+    <label>Your Name</label>
   </div>
 
-  <p style="text-align:center;margin-top:15px">Or WhatsApp me instantly</p>
-</section>
+  <div class="form-group">
+    <input type="email" name="email" required placeholder=" ">
+    <label>Your Email</label>
+  </div>
 
-<a class="whatsapp" href="https://wa.me/8801518395372">💬</a>
+  <div class="form-group">
+    <select name="service" required>
+      <option value="" disabled selected></option>
+      <option>SEO</option>
+      <option>Ads Management</option>
+      <option>Web Development</option>
+      <option>Graphic Design</option>
+    </select>
+    <label>Select Service</label>
+  </div>
 
+  <div class="form-group">
+    <textarea name="message" rows="5" required placeholder=" "></textarea>
+    <label>Your Project Details</label>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <button type="submit" class="btn-glow">Get Free Strategy Call</button>
+
+</form>
+</div>
 <script>
-new Typed('.typing',{
-  strings:['Digital Marketer','SEO Expert','Web Developer','Graphic Designer'],
-  typeSpeed:60,backSpeed:40,loop:true
-});
-
-// counter
-const counters=document.querySelectorAll('.count');
-counters.forEach(c=>{
-  const update=()=>{
-    let target=+c.getAttribute('data');
-    let val=+c.innerText;
-    let inc=target/100;
-    if(val<target){c.innerText=Math.ceil(val+inc);setTimeout(update,20)}
-    else c.innerText=target;
-  };
-  update();
-});
-
-// skill
-window.addEventListener('scroll',()=>{
-  document.querySelectorAll('.fill').forEach(f=>{
-    if(f.getBoundingClientRect().top<window.innerHeight)
-      f.style.width=f.getAttribute('data');
-  });
+document.querySelectorAll(".form-group input, .form-group textarea, .form-group select")
+.forEach(el=>{
+  el.addEventListener("focus",()=>el.parentElement.classList.add("active"));
+  el.addEventListener("blur",()=>el.parentElement.classList.remove("active"));
 });
 </script>
-
     
 <!-- SOCIAL MEDIA ICONS -->
-<section id="social" style="text-align:center;padding:30px 20px;background:#0b1220">
+<section id="social" style="text-align:center;padding:30px 20px;background:">
   <h2 style="margin-bottom:15px">Connect With Me</h2>
   <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap">
     <a href="https://www.facebook.com/bakibillah1475" target="_blank" style="color:#fff;font-size:28px">
