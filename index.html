@@ -102,16 +102,79 @@
     .fill{height:10px;width:0;background:#22c55e;transition:2s}
 
     /* SERVICES / FUNNEL OFFER */
-    .services{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px
-    }
+ 
+      /* SERVICES - PREMIUM APPLE STYLE */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
 
-    .service{
-      background:#0f172a;padding:20px;border-radius:15px;text-align:center
-    }
+.service{
+  position:relative;
+  background:rgba(15,23,42,0.7);
+  padding:30px 20px;
+  border-radius:20px;
+  text-align:center;
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.05);
+  overflow:hidden;
+  transition:all 0.4s ease;
+}
 
-    .service h3{color:#22c55e;margin-bottom:10px}
+/* gradient glow border */
+.service::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:1px;
+  background:linear-gradient(120deg,transparent,#22c55e,transparent);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0;
+  transition:0.4s;
+}
 
+/* hover effect */
+.service:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.service:hover::before{
+  opacity:1;
+}
+
+/* title */
+.service h3{
+  color:#22c55e;
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+/* text */
+.service p{
+  color:#cbd5e1;
+  font-size:14px;
+  opacity:0.9;
+}
+
+/* icon (optional upgrade) */
+.service-icon{
+  font-size:28px;
+  margin-bottom:12px;
+  display:block;
+  transition:0.4s;
+}
+
+.service:hover .service-icon{
+  transform:scale(1.2) rotate(5deg);
+}
+      
     /* PORTFOLIO */
     .category{margin-top:40px}
 
@@ -555,11 +618,33 @@ new Typed('.typing',{
 <!-- SERVICES FUNNEL -->
 <section id="services">
   <h2>What I Offer</h2>
+
   <div class="services">
-    <div class="service"><h3>SEO Growth</h3><p>Rank your business on Google</p></div>
-    <div class="service"><h3>Ads Management</h3><p>Facebook & Google Ads that convert</p></div>
-    <div class="service"><h3>Design</h3><p>High converting graphics & branding</p></div>
-    <div class="service"><h3>Web Development</h3><p>Fast, modern business websites</p></div>
+
+    <div class="service">
+      <span class="service-icon">🔍</span>
+      <h3>SEO Growth</h3>
+      <p>Rank your business on Google and dominate search results.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-icon">📊</span>
+      <h3>Ads Management</h3>
+      <p>High-converting Facebook & Google Ads that generate ROI.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-icon">🎨</span>
+      <h3>Design</h3>
+      <p>Modern branding and visuals that convert visitors into clients.</p>
+    </div>
+
+    <div class="service">
+      <span class="service-icon">💻</span>
+      <h3>Web Development</h3>
+      <p>Fast, premium websites designed for performance and sales.</p>
+    </div>
+
   </div>
 </section>
 
